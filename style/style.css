@@ -29,14 +29,16 @@ header {
     flex-direction: column;
     width: 100%;
 }
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 .constraints {
     max-width: 1000px;
-}
 
-footer {
-    border: 1px solid red;
 }
-
 
 ul {
     display: flex;
@@ -48,6 +50,8 @@ ul {
 .hero {
     display: flex;
     padding: 4em 1em;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .hero h1 {
@@ -70,15 +74,22 @@ ul {
     font-weight: bold;
 }
 
+.content>h2 {
+    text-align: center;
+}
+
 .cardGrid {
     padding: 1em;
     display: flex;
     justify-content: space-evenly;
+
+    
 }
 
 .card {
     width: 100px;
     text-align: center;
+
 }
 
 .img-placeholder {
@@ -92,13 +103,27 @@ ul {
 .quote {
     width: 100%;
     background-color: #e5e7eb;
+
 }
 
+.quote p:first-child {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.quote p:not(:first-child) {
+    font-size: 20px;
+    font-weight: 900;
+    align-self: flex-end;
+    margin-top: -20px;
+}
 .quote .constraints {
     display: flex;
     flex-direction: column;
     justify-content: center;
- 
+    margin: 0 auto;
+    padding: 2em 5em 2em 10em;
 }
 
 .left-hero {
@@ -110,11 +135,68 @@ ul {
     flex-direction: column;
     justify-content: flex-start;
     background-color: #3882f6;
-    border-radius: 5px;
+    border-radius: 8px;
     color: #f9faf8;
     margin-top: 5em;
+    width: 100%;
+    padding: 3em 6em;
+    box-sizing: border-box;
+}
+
+.cta h3 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.cta p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.cta button {
+    width: 120px;
+    height: 40px;
+    color: #f9faf8;
+    font-size: 1em;
+    font-weight: bold;
+    border: 2px solid #f9faf8;
+    background-color: #3882f6;
+    border-radius: 5px;
+    align-self: flex-end;
+    margin-top: -45px;
+}
+
+.hero-placeholder {
+    min-width: 400px;
+    height: 250px;
+    background: #696969;
+    color: #f9faf8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer {
+    width: 100%;
+    height: 100px;
+    color: #f9faf8;
     margin-top: 5em;
+    background-color: #1f2937;
+    text-align: center;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+    
+@media (max-width: 850px) {
+    .hero-placeholder {
+        margin-top: 50px;
+    }
+
+    .hero {
+        justify-content: center;
+    }
+
+    .left-hero {
+        text-align: center;
+    }
 }
